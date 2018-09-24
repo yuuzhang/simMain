@@ -49,7 +49,7 @@ def runJob(shellCmd,traffic,directory):
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     sig=QtCore.pyqtSignal('QString')
-    exepath=os.environ['HOME']+"/ndnSIM20180402/ns-3/"
+    exepath=os.environ['HOME']+"/ndnSIM20180908/ns-3/"
 
     global pool,jobs,parent_pid
     jobs=[]
@@ -63,7 +63,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.lnEdit_loadEnd.setText('15')
         self.lnEdit_loadStep.setText('2')
         self.cmBox_RoutingName.addItems(["Flooding","BestRoute","k-shortest-2","k-shortest-3","MultiPathPairFirst",
-                                         "SCIP","pyMultiPathPairFirst","pyFlooding","pyBestRoute","pyk-shortest-2","pyk-shortest-3"])
+                                         "SCIP","pyMultiPathPairFirst","pyFlooding","pyBestRoute","pyk-shortest-2","pyk-shortest-3",
+                                         "pyFloodingwithRestore","pyBestRoutewithRestore","pyk-shortestwithRestore-2","pyk-shortestwithRestore-3"])
         self.cmBox_RoutingName.setCurrentIndex(2)
         self.cmBox_SimulationSpan.addItems(["500","100","150","200","300","500","1000","2000","3000","5000"])
     

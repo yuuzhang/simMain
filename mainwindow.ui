@@ -704,7 +704,7 @@
    <widget class="QPushButton" name="pBtn_KillAll">
     <property name="geometry">
      <rect>
-      <x>635</x>
+      <x>220</x>
       <y>580</y>
       <width>131</width>
       <height>51</height>
@@ -735,6 +735,24 @@
     </property>
     <property name="text">
      <string>清空显示</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pBtn_Results">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>580</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>显示结果</string>
     </property>
    </widget>
   </widget>
