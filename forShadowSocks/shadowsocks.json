@@ -1,0 +1,17 @@
+{
+"server":"149.28.197.5",
+"port_password":
+{
+   "4":"abcdefg",
+   "5":"abcdefg"
+},
+"_comment":
+{
+   "4":"public",
+   "5":"zhang"
+},
+"local_address": "127.0.0.1",
+"local_port":1080,
+"password":"abcde",
+"timeout":600,
+

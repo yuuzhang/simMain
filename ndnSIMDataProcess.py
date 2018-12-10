@@ -93,8 +93,11 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusTextEdit.append("文件"+ str(fileName) + " 显示完成！ 耗时：%.2f s" %(time.time()-startTime))
 
 
-    # 数据文件单选处理
-    def filesListBoxValueChanged(self):
+    # 数据文件单选处理，currentItemChanged先于Clicked发生，使用currentItemChanged不能用len(selectedItems)判断是多选，导致重复触发
+    #def filesListBoxValueChanged(self):
+    def filesListBoxClicked(self):
+        if len(self.filesListBox.selectedItems())>1:
+            return
         startTime=time.time()
         if self.filesListBox.currentRow() < 0 or self.dirField.text() == '':
             return
@@ -330,12 +333,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def faceDropDownValueChanged(self):
         self.typesListBoxValueChanged()
 
-
     def connectEvents(self):
         self.dirButton.clicked.connect(self.chooseDir)
         self.reloadBtn.clicked.connect(self.reloadFilesList)
-        self.filesListBox.currentItemChanged.connect(self.filesListBoxValueChanged)
+        #self.filesListBox.currentItemChanged.connect(self.filesListBoxValueChanged)
         self.filesListBox.itemSelectionChanged.connect(self.filesListBoxSelectionChanged)
+        self.filesListBox.itemClicked.connect(self.filesListBoxClicked)
+        
         self.fieldsListBox.currentRowChanged.connect(self.fieldsListBoxValueChanged)
         self.typesListBox.currentRowChanged.connect(self.typesListBoxValueChanged)
         self.faceCheckBox.stateChanged.connect(self.faceCheckBoxValueChanged)

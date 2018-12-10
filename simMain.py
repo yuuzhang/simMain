@@ -59,8 +59,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.lnEdit_Prog.setText(self.exepath+"src/ndnSIM/examples/ndn-zhangyu-scip-routing.py")
-        self.lnEdit_loadStart.setText('5')
-        self.lnEdit_loadEnd.setText('15')
+        self.lnEdit_loadStart.setText('10')
+        self.lnEdit_loadEnd.setText('40')
         self.lnEdit_loadStep.setText('2')
         self.cmBox_RoutingName.addItems(["Flooding","BestRoute","k-shortest-2","k-shortest-3","MultiPathPairFirst",
                                          "SCIP","pyMultiPathPairFirst","pyFlooding","pyBestRoute","pyk-shortest-2","pyk-shortest-3",
