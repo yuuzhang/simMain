@@ -14,4 +14,7 @@
 "local_port":1080,
 "password":"abcde",
 "timeout":600,
-
+"method":"aes-256-cfb",
+"fast_open":false,
+"workers":1
+}
